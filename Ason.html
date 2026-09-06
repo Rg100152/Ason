@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASON - Restricted Access</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Base Reset & Background Setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        body {
+            background-color: #0b0614;
+            /* Cyberpunk Grid Background */
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ffffff;
+        }
+
+        /* Main Container with Neon Blue Glow */
+        .login-box {
+            background: linear-gradient(135deg, #11081a, #0a0410);
+            width: 400px;
+            padding: 50px 40px;
+            border: 2px solid #00f0ff;
+            border-radius: 4px;
+            box-shadow: 
+                0 0 15px rgba(0, 240, 255, 0.4),
+                inset 0 0 15px rgba(0, 240, 255, 0.2);
+            text-align: center;
+            position: relative;
+        }
+
+        /* Typography */
+        h1 {
+            color: #ff2a7a;
+            font-size: 2.5rem;
+            letter-spacing: 4px;
+            text-shadow: 0 0 10px rgba(255, 42, 122, 0.6);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #5a4b66;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+        }
+
+        /* Input Fields */
+        .input-group {
+            display: flex;
+            align-items: center;
+            background: #0d0614;
+            border: 1px solid #3d1c37;
+            margin-bottom: 20px;
+            padding: 12px 15px;
+            border-radius: 4px;
+            transition: border 0.3s ease;
+        }
+
+        .input-group:focus-within {
+            border: 1px solid #ff2a7a;
+        }
+
+        .input-group i {
+            color: #ff2a7a;
+            font-size: 1.1rem;
+            margin-right: 15px;
+        }
+
+        .input-group input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #ffffff;
+            font-size: 1rem;
+            width: 100%;
+            letter-spacing: 1px;
+        }
+
+        .input-group input::placeholder {
+            color: #4a3b56;
+        }
+
+        .fa-eye {
+            cursor: pointer;
+            margin-left: 10px;
+            margin-right: 0 !important;
+        }
+
+        /* Links */
+        .forgot-link {
+            text-align: right;
+            margin-bottom: 30px;
+        }
+
+        a {
+            color: #00f0ff;
+            text-decoration: underline;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px #00f0ff;
+        }
+
+        /* Authenticate Button */
+        .auth-btn {
+            width: 100%;
+            background: linear-gradient(90deg, #ff2a7a, #c2155a);
+            color: #ffffff;
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .auth-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(255, 42, 122, 0.6);
+        }
+
+        /* Registration text */
+        .register-text {
+            font-size: 0.85rem;
+            color: #5a4b66;
+            margin-bottom: 40px;
+        }
+
+        .register-text a {
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        /* Social Login Bottom Section */
+        .secure-connection {
+            color: #5a4b66;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons .icon-circle {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #00f0ff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #00f0ff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons .icon-circle:hover {
+            background: rgba(0, 240, 255, 0.1);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <h1>ASON</h1>
+        <p class="subtitle">ACCESS RESTRICTED AREA</p>
+
+        <form action="#" method="POST">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="USER ID" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="PASSWORD" required>
+                <i class="fas fa-eye"></i>
+            </div>
+
+            <div class="forgot-link">
+                <a href="#">FORGOT CREDENTIALS?</a>
+            </div>
+
+            <button type="submit" class="auth-btn">AUTHENTICATE</button>
+
+            <div class="register-text">
+                NEW USER? <a href="#">REQUEST ACCESS</a>
+            </div>
+        </form>
+
+        <div class="secure-connection">
+            SECURE CONNECTION
+        </div>
+        
+        <div class="social-icons">
+            <a href="#" class="icon-circle"><i class="fab fa-google"></i></a>
+            <a href="#" class="icon-circle"><i class="fab fa-github"></i></a>
+            <a href="#" class="icon-circle"><i class="fab fa-discord"></i></a>
+        </div>
+    </div>
+
+</body>
+</html>
